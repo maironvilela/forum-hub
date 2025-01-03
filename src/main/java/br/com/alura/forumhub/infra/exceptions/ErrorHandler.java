@@ -3,6 +3,7 @@ package br.com.alura.forumhub.infra.exceptions;
 
 import br.com.alura.forumhub.domain.course.types.Category;
 import br.com.alura.forumhub.infra.exceptions.shared.ResourceAlreadyExistsException;
+import br.com.alura.forumhub.infra.exceptions.shared.ResourceNotFoundException;
 import br.com.alura.forumhub.infra.exceptions.types.DataErrorValidation;
 import br.com.alura.forumhub.infra.exceptions.types.DetailsMessageError;
 import br.com.alura.forumhub.infra.exceptions.types.MensagemErro;
@@ -45,6 +46,12 @@ public class ErrorHandler {
     }
     @ExceptionHandler(ResourceAlreadyExistsException.class)
     public ResponseEntity<DetailsMessageError> resourceAlreadyExistsException(ResourceAlreadyExistsException exception) {
+
+        return ResponseEntity.badRequest().body(new DetailsMessageError(exception));
+    }
+
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<DetailsMessageError> resourceNotFoundException(ResourceNotFoundException exception) {
 
         return ResponseEntity.badRequest().body(new DetailsMessageError(exception));
     }

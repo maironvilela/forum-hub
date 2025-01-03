@@ -1,6 +1,7 @@
 package br.com.alura.forumhub.infra.exceptions.types;
 
 import br.com.alura.forumhub.infra.exceptions.shared.ResourceAlreadyExistsException;
+import br.com.alura.forumhub.infra.exceptions.shared.ResourceNotFoundException;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -20,6 +21,10 @@ public record DetailsMessageError(
     }
 
     public DetailsMessageError(ResourceAlreadyExistsException exception) {
+        this(exception.getPath(), exception.getError(),exception.getMessage(), getDataTime());
+    }
+
+    public DetailsMessageError(ResourceNotFoundException exception) {
         this(exception.getPath(), exception.getError(),exception.getMessage(), getDataTime());
     }
 

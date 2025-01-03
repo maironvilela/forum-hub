@@ -2,7 +2,7 @@ package br.com.alura.forumhub.domain.course.services;
 
 import br.com.alura.forumhub.domain.course.models.Course;
 import br.com.alura.forumhub.domain.course.types.UpdateCourseRequest;
-import br.com.alura.forumhub.domain.course.validations.protocols.UpdateCourseValidateProtocol;
+import br.com.alura.forumhub.domain.course.validations.protocols.DeleteCourseValidateProtocol;
 import br.com.alura.forumhub.infra.exceptions.shared.ResourceNotFoundException;
 import br.com.alura.forumhub.infra.repositories.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,19 +11,16 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class UpdateCourseService {
+public class DeleteCourseService {
+
+    @Autowired
+    private List<DeleteCourseValidateProtocol<Long>> validations;
 
     @Autowired
     private CourseRepository repository;
 
-    @Autowired
-    private List<UpdateCourseValidateProtocol<UpdateCourseRequest>> validations;
-
-    public Course execute(UpdateCourseRequest request, Long id){
-        this.validations.forEach(v -> v.valid(request, id));
-
-        var course = this.repository.getReferenceById(id);
-        course.update(request);
-        return course;
+    public void execute(Long id){
+        validations.forEach(v -> v.valid(id));
+        this.repository.deleteById(id);
     }
 }
