@@ -4,7 +4,7 @@ import br.com.alura.forumhub.controller.protocols.CreateResourceController;
 import br.com.alura.forumhub.domain.course.models.Course;
 import br.com.alura.forumhub.domain.course.types.CreateCourseRequest;
 import br.com.alura.forumhub.domain.course.types.CreateCourseResponse;
-import br.com.alura.forumhub.domain.course.validations.CourseValidatorProtocol;
+import br.com.alura.forumhub.domain.course.validations.protocols.CourseValidatorProtocol;
 import br.com.alura.forumhub.infra.repositories.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
