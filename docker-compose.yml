@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  mysql-db:
+    image: mysql:8.0
+    container_name: alura-forum-hub
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: forum_hub
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
+      MYSQL_ROOT_HOST: '%'
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+volumes:
+  db_data:
