@@ -12,7 +12,9 @@ services:
       MYSQL_USER: docker
       MYSQL_PASSWORD: docker
       MYSQL_ROOT_HOST: '%'
-    command: --default-authentication-plugin=mysql_native_password
+    command: >
+      --host_cache_size=0
+      --authentication_policy=mysql_native_password
     volumes:
       - db_data:/var/lib/mysql
     restart: always

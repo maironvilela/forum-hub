@@ -39,11 +39,16 @@ public class ErrorHandler {
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseEntity<MensagemErro> httpMessageNotReadableException(JsonMappingException exception) {
         String invalidValue = exception.getPath().getFirst().getFieldName();
-        String acceptedValues = Arrays.toString(Category.values());
-        String message = String.format("O valor '%s' não é aceito. Valores válidos: %s", invalidValue, acceptedValues);
+        //String acceptedValues = Arrays.toString(Category.values());
+        String acceptedValues =  exception.getMessage().split(":")[2].split("\n")[0];
+
+        String message = String.format("O valor '%s' não é aceito. Valores válidos: %s", invalidValue,acceptedValues);
+
+
 
         return ResponseEntity.badRequest().body(new MensagemErro(message));
     }
+
     @ExceptionHandler(ResourceAlreadyExistsException.class)
     public ResponseEntity<DetailsMessageError> resourceAlreadyExistsException(ResourceAlreadyExistsException exception) {
 
@@ -52,7 +57,6 @@ public class ErrorHandler {
 
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<DetailsMessageError> resourceNotFoundException(ResourceNotFoundException exception) {
-
         return ResponseEntity.badRequest().body(new DetailsMessageError(exception));
     }
 
