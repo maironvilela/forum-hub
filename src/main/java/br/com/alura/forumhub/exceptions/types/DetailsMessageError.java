@@ -1,7 +1,6 @@
-package br.com.alura.forumhub.infra.exceptions.types;
+package br.com.alura.forumhub.exceptions.types;
 
-import br.com.alura.forumhub.infra.exceptions.shared.ResourceAlreadyExistsException;
-import br.com.alura.forumhub.infra.exceptions.shared.ResourceNotFoundException;
+import br.com.alura.forumhub.exceptions.AppException;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -20,13 +19,10 @@ public record DetailsMessageError(
         this.dateTime = dateTime;
     }
 
-    public DetailsMessageError(ResourceAlreadyExistsException exception) {
+    public DetailsMessageError(AppException exception) {
         this(exception.getPath(), exception.getError(),exception.getMessage(), getDataTime());
     }
 
-    public DetailsMessageError(ResourceNotFoundException exception) {
-        this(exception.getPath(), exception.getError(),exception.getMessage(), getDataTime());
-    }
 
     private static String getDataTime(){
         LocalDateTime dateTimeAtual = LocalDateTime.now();

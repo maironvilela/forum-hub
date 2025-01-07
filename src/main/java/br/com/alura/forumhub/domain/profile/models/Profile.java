@@ -1,7 +1,7 @@
 package br.com.alura.forumhub.domain.profile.models;
 
-import br.com.alura.forumhub.domain.profile.DTOs.CreateProfileRequest;
-import br.com.alura.forumhub.domain.profile.DTOs.Name;
+import br.com.alura.forumhub.domain.profile.dtos.CreateProfileRequest;
+import br.com.alura.forumhub.domain.profile.dtos.Name;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -16,6 +16,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(of = "id")
 @Getter
 public class Profile {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,7 +29,8 @@ public class Profile {
     }
 
 
-    }
+
+}
 
 
 

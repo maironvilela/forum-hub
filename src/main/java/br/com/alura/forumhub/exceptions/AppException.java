@@ -1,4 +1,4 @@
-package br.com.alura.forumhub.infra.exceptions;
+package br.com.alura.forumhub.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

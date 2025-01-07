@@ -1,6 +1,6 @@
-package br.com.alura.forumhub.infra.exceptions.shared;
+package br.com.alura.forumhub.exceptions.shared;
 
-import br.com.alura.forumhub.infra.exceptions.AppException;
+import br.com.alura.forumhub.exceptions.AppException;
 
 public class ResourceNotFoundException extends AppException {
     public ResourceNotFoundException(String path) {

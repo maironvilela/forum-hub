@@ -1,4 +1,4 @@
-package br.com.alura.forumhub.infra.exceptions.types;
+package br.com.alura.forumhub.exceptions.types;
 
 import org.springframework.validation.FieldError;
 

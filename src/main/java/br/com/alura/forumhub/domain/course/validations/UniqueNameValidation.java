@@ -2,7 +2,7 @@ package br.com.alura.forumhub.domain.course.validations;
 
 import br.com.alura.forumhub.domain.course.types.CreateCourseRequest;
 import br.com.alura.forumhub.domain.course.validations.protocols.CourseValidatorProtocol;
-import br.com.alura.forumhub.infra.exceptions.shared.ResourceAlreadyExistsException;
+import br.com.alura.forumhub.exceptions.shared.ResourceAlreadyExistsException;
 import br.com.alura.forumhub.infra.repositories.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

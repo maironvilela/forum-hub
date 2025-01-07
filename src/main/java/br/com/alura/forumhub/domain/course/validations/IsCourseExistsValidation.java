@@ -3,7 +3,7 @@ package br.com.alura.forumhub.domain.course.validations;
 import br.com.alura.forumhub.domain.course.types.UpdateCourseRequest;
 import br.com.alura.forumhub.domain.course.validations.protocols.DeleteCourseValidateProtocol;
 import br.com.alura.forumhub.domain.course.validations.protocols.UpdateCourseValidateProtocol;
-import br.com.alura.forumhub.infra.exceptions.shared.ResourceNotFoundException;
+import br.com.alura.forumhub.exceptions.shared.ResourceNotFoundException;
 import br.com.alura.forumhub.infra.repositories.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

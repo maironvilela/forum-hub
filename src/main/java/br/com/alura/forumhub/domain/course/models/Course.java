@@ -32,10 +32,8 @@ public class Course {
         return new Course(request.name(), request.category());
     }
 
-    public Course update(UpdateCourseRequest request){
+    public void update(UpdateCourseRequest request){
         this.name = request.name() == null || request.name().trim().isEmpty()?this.name: request.name();
         this.category = request.category() == null  ?this.category: request.category();
-
-        return this;
     }
 }

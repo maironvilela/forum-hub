@@ -2,8 +2,8 @@ package br.com.alura.forumhub.controller.profiles;
 
 
 import br.com.alura.forumhub.controller.protocols.CreateResourceController;
-import br.com.alura.forumhub.domain.profile.DTOs.CreateProfileRequest;
-import br.com.alura.forumhub.domain.profile.DTOs.CreateProfileResponse;
+import br.com.alura.forumhub.domain.profile.dtos.CreateProfileRequest;
+import br.com.alura.forumhub.domain.profile.dtos.CreateProfileResponse;
 import br.com.alura.forumhub.domain.profile.models.Profile;
 import br.com.alura.forumhub.infra.repositories.ProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
