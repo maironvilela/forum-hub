@@ -21,7 +21,7 @@ public record DetailsMessageError(
 
     public DetailsMessageError(AppException exception) {
         this(exception.getPath(), exception.getError(),exception.getMessage(), getDataTime());
-    }
+     }
 
 
     private static String getDataTime(){

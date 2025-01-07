@@ -17,7 +17,7 @@ public class ProfileValidation implements  CreateUserValidation<CreateUserReques
 
         textProfiles.forEach((profile) ->{
             if(!validProfile(profile.toUpperCase())){
-                throw new ProfileValidationException("Perfil "+ profile+ " invalido. Valores válidos: "+acceptedValues);
+                throw new ProfileValidationException("Perfil "+ profile+ " invalido. Perfís válidos: "+acceptedValues, "/users");
             }
         });
     }

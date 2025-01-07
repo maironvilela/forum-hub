@@ -56,7 +56,7 @@ public class ErrorHandler {
 
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<DetailsMessageError> resourceNotFoundException(ResourceNotFoundException exception) {
-        return ResponseEntity.badRequest().body(new DetailsMessageError(exception));
+         return ResponseEntity.badRequest().body(new DetailsMessageError(exception));
     }
 
     @ExceptionHandler(ProfileValidationException.class)

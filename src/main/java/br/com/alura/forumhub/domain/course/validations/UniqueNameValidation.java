@@ -18,7 +18,7 @@ public class UniqueNameValidation implements CourseValidatorProtocol<CreateCours
         var courseOptional = this.repository.findByName(request.name());
 
         if(courseOptional.isPresent()){
-            throw new ResourceAlreadyExistsException("/courses");
+            throw new ResourceAlreadyExistsException("Resource Already Exists", "/courses");
         }
 
      }

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
-@RequestMapping("/perfis")
+@RequestMapping("/profiles")
 public class CreateProfileController implements CreateResourceController<CreateProfileRequest, CreateProfileResponse> {
 
 

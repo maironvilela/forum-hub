@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("cursos")
+@RequestMapping("courses")
 public class UpdateCourseController implements UpdateResourceController<UpdateCourseRequest, UpdateCourseResponse> {
 
     @Autowired

@@ -28,7 +28,7 @@ public class IsCourseExistsValidation implements DeleteCourseValidateProtocol<Lo
         var optionalCourse = this.repository.findById(id);
 
         if(optionalCourse.isEmpty()){
-            throw new ResourceNotFoundException("Curso com ID" +id+" não existe");
+            throw new ResourceNotFoundException("Curso com ID" +id+" não existe", "/courses");
         }
 
     }

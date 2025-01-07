@@ -16,7 +16,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.util.List;
 
 @RestController
-@RequestMapping("/cursos")
+@RequestMapping("/courses")
 public class CreateCourseController implements CreateResourceController<CreateCourseRequest, CreateCourseResponse> {
 
 

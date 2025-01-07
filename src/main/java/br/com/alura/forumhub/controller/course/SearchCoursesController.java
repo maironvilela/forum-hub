@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/cursos")
+@RequestMapping("/courses")
 public class SearchCoursesController implements SearchResourceController<SearchCourserResponse> {
 
     @Autowired
