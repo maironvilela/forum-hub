@@ -1,10 +1,9 @@
 package br.com.alura.forumhub.domain.course.models;
 
-import br.com.alura.forumhub.domain.course.types.Category;
-import br.com.alura.forumhub.domain.course.types.CreateCourseRequest;
-import br.com.alura.forumhub.domain.course.types.UpdateCourseRequest;
+import br.com.alura.forumhub.controller.course.dtos.Category;
+import br.com.alura.forumhub.controller.course.dtos.CreateCourseRequest;
+import br.com.alura.forumhub.controller.course.dtos.UpdateCourseRequest;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

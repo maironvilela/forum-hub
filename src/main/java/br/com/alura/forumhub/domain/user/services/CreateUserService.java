@@ -1,6 +1,6 @@
 package br.com.alura.forumhub.domain.user.services;
 
-import br.com.alura.forumhub.domain.profile.dtos.Name;
+import br.com.alura.forumhub.controller.profiles.dtos.Name;
 import br.com.alura.forumhub.controller.users.dtos.CreateUserRequest;
 import br.com.alura.forumhub.domain.user.model.User;
 import br.com.alura.forumhub.domain.user.validations.protocols.CreateUserValidation;

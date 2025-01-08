@@ -1,6 +1,6 @@
 package br.com.alura.forumhub.domain.course.validations;
 
-import br.com.alura.forumhub.domain.course.types.UpdateCourseRequest;
+import br.com.alura.forumhub.controller.course.dtos.UpdateCourseRequest;
 import br.com.alura.forumhub.domain.course.validations.protocols.DeleteCourseValidateProtocol;
 import br.com.alura.forumhub.domain.course.validations.protocols.UpdateCourseValidateProtocol;
 import br.com.alura.forumhub.exceptions.shared.ResourceNotFoundException;

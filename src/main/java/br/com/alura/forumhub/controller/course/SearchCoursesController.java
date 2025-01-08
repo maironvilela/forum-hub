@@ -1,7 +1,7 @@
 package br.com.alura.forumhub.controller.course;
 
 import br.com.alura.forumhub.controller.protocols.SearchResourceController;
-import br.com.alura.forumhub.domain.course.types.SearchCourserResponse;
+import br.com.alura.forumhub.controller.course.dtos.SearchCourserResponse;
 import br.com.alura.forumhub.infra.repositories.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

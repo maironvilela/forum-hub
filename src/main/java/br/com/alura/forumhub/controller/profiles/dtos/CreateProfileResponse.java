@@ -1,4 +1,4 @@
-package br.com.alura.forumhub.domain.profile.dtos;
+package br.com.alura.forumhub.controller.profiles.dtos;
 
 import br.com.alura.forumhub.domain.profile.models.Profile;
 

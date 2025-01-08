@@ -1,7 +1,7 @@
 package br.com.alura.forumhub.controller.profiles;
 
 import br.com.alura.forumhub.controller.protocols.SearchResourceController;
-import br.com.alura.forumhub.domain.profile.dtos.SearchProfilesResponse;
+import br.com.alura.forumhub.controller.profiles.dtos.SearchProfilesResponse;
 import br.com.alura.forumhub.infra.repositories.ProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
