@@ -9,6 +9,7 @@ import br.com.alura.forumhub.domain.user.validations.protocols.CreateUserValidat
 import br.com.alura.forumhub.infra.repositories.ProfileRepository;
 import br.com.alura.forumhub.infra.repositories.UserRepository;
 import jakarta.transaction.Transactional;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,25 +20,34 @@ public class CreateUserService {
     private final UserRepository userRepository;
     private final ProfileRepository profileRepository;
     private final List<CreateUserValidation<CreateUserRequest>> validations;
+    private final PasswordEncoder passwordEncoder;
 
-    public CreateUserService(UserRepository userRepository, ProfileRepository profileRepository, List<CreateUserValidation<CreateUserRequest>> validations){
+
+    public CreateUserService(UserRepository userRepository, ProfileRepository profileRepository, List<CreateUserValidation<CreateUserRequest>> validations, PasswordEncoder passwordEncoder){
         this.userRepository = userRepository;
         this.profileRepository = profileRepository;
         this.validations = validations;
+        this.passwordEncoder = passwordEncoder;
+    }
+
+     public User execute(CreateUserRequest request){
+        validateRequest(request);
+        String hashedPassword = hashedPassword(request.password());
+        var user = User.getInstance(request,hashedPassword);
+        setProfiles(user, request);
+        return this.userRepository.save(user);
 
     }
 
-     public void execute(CreateUserRequest request){
-
+    private void validateRequest(CreateUserRequest request){
         validations.forEach(v -> v.validation(request));
+    }
 
-        var user = User.getInstance(request);
+    private String hashedPassword(String textPassword){
+        return passwordEncoder.encode(textPassword);
+    }
 
+    private void setProfiles(User user, CreateUserRequest request){
         request.profiles().forEach(p -> user.getProfiles().add(profileRepository.getByName(Name.valueOf(p))));
-
-         System.out.println(user.toString());
-
-        this.userRepository.save(user);
-
     }
 }

@@ -15,19 +15,16 @@ import org.springframework.web.util.UriComponentsBuilder;
 @RestController
 @RequestMapping("users")
 public class CreateUserController implements CreateResourceController<CreateUserRequest, CreateUserResponse> {
-    private CreateUserService createUserService;
+    private final CreateUserService createUserService;
 
     public CreateUserController(CreateUserService createUserService){
         this.createUserService = createUserService;
     }
 
-
-
     @PostMapping
     @Override
     public ResponseEntity<CreateUserResponse> handle(CreateUserRequest request, UriComponentsBuilder uriBuilder) {
-        this.createUserService.execute(request);
-        return ResponseEntity.ok(new CreateUserResponse());
-
+        var savedUser = this.createUserService.execute(request);
+        return ResponseEntity.ok(new CreateUserResponse(savedUser));
     }
 }

@@ -6,6 +6,7 @@ import br.com.alura.forumhub.exceptions.shared.ResourceNotFoundException;
 import br.com.alura.forumhub.exceptions.types.DataErrorValidation;
 import br.com.alura.forumhub.exceptions.types.DetailsMessageError;
 import br.com.alura.forumhub.exceptions.types.MensagemErro;
+import br.com.alura.forumhub.exceptions.users.EmailAlreadyExistsException;
 import br.com.alura.forumhub.exceptions.users.ProfileValidationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import org.springframework.http.ResponseEntity;
@@ -61,6 +62,11 @@ public class ErrorHandler {
 
     @ExceptionHandler(ProfileValidationException.class)
     public ResponseEntity<DetailsMessageError> profileValidationException(ProfileValidationException exception) {
+        return ResponseEntity.badRequest().body(new DetailsMessageError(exception));
+    }
+
+    @ExceptionHandler(EmailAlreadyExistsException.class)
+    public ResponseEntity<DetailsMessageError> emailAlreadyExistsException(EmailAlreadyExistsException exception) {
         return ResponseEntity.badRequest().body(new DetailsMessageError(exception));
     }
 

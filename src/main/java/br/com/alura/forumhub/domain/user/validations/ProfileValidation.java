@@ -1,14 +1,15 @@
-package br.com.alura.forumhub.domain.user.validations.protocols;
+package br.com.alura.forumhub.domain.user.validations;
 
 import br.com.alura.forumhub.domain.profile.dtos.Name;
 import br.com.alura.forumhub.domain.user.dtos.CreateUserRequest;
+import br.com.alura.forumhub.domain.user.validations.protocols.CreateUserValidation;
 import br.com.alura.forumhub.exceptions.users.ProfileValidationException;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
 @Component
-public class ProfileValidation implements  CreateUserValidation<CreateUserRequest>{
+public class ProfileValidation implements CreateUserValidation<CreateUserRequest> {
     @Override
     public void validation(CreateUserRequest request) {
         String acceptedValues = Arrays.toString(Name.values());

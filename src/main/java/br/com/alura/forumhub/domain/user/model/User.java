@@ -32,7 +32,7 @@ public class User {
     List<Profile> profiles = new ArrayList<>();
 
     public User( String name, String email, String password, List<Profile> profiles) {
-         this.name = name;
+        this.name = name;
         this.email = email;
         this.password = password;
         this.profiles = profiles;
@@ -44,13 +44,9 @@ public class User {
         this.password = password;
      }
 
-    public static User getInstance(CreateUserRequest request) {
-        return new User(request.name(), request.email(), request.password());
+    public static User getInstance(CreateUserRequest request, String hashedPassword) {
+        return new User(request.name(), request.email(), hashedPassword);
     }
 
 
-/*
-    public static User getInstance(CreateUserRequest request) {
-        return new User(null, request.name(), request.email(), request.password(), request.profiles());
-    }*/
 }
