@@ -1,8 +1,5 @@
-package br.com.alura.forumhub.domain.user.dtos;
+package br.com.alura.forumhub.controller.users.dtos;
 
-import br.com.alura.forumhub.domain.profile.models.Profile;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public record CreateUserRequest(

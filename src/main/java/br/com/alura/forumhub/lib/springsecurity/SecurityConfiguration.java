@@ -1,4 +1,4 @@
-package br.com.alura.forumhub.lib.spring_security;
+package br.com.alura.forumhub.lib.springsecurity;
 
 
 import org.springframework.context.annotation.Bean;

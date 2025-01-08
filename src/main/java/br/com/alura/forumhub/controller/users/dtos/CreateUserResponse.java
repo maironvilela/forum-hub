@@ -1,4 +1,4 @@
-package br.com.alura.forumhub.domain.user.dtos;
+package br.com.alura.forumhub.controller.users.dtos;
 
 import br.com.alura.forumhub.domain.profile.models.Profile;
 import br.com.alura.forumhub.domain.user.model.User;
