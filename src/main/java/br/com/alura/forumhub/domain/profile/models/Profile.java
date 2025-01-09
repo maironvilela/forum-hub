@@ -27,9 +27,6 @@ public class Profile {
         return new Profile(null, request.name());
 
     }
-
-
-
 }
 
 

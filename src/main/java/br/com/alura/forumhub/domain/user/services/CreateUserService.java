@@ -3,7 +3,7 @@ package br.com.alura.forumhub.domain.user.services;
 import br.com.alura.forumhub.controller.profiles.dtos.Name;
 import br.com.alura.forumhub.controller.users.dtos.CreateUserRequest;
 import br.com.alura.forumhub.domain.user.model.User;
-import br.com.alura.forumhub.domain.user.validations.protocols.CreateUserValidation;
+import br.com.alura.forumhub.domain.user.services.validations.protocols.CreateUserValidation;
 import br.com.alura.forumhub.infra.repositories.ProfileRepository;
 import br.com.alura.forumhub.infra.repositories.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;

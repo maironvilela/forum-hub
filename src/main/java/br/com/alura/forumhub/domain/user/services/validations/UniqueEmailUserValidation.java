@@ -1,7 +1,7 @@
-package br.com.alura.forumhub.domain.user.validations;
+package br.com.alura.forumhub.domain.user.services.validations;
 
 import br.com.alura.forumhub.controller.users.dtos.CreateUserRequest;
-import br.com.alura.forumhub.domain.user.validations.protocols.CreateUserValidation;
+import br.com.alura.forumhub.domain.user.services.validations.protocols.CreateUserValidation;
 import br.com.alura.forumhub.exceptions.users.EmailAlreadyExistsException;
 import br.com.alura.forumhub.infra.repositories.UserRepository;
 import org.springframework.stereotype.Component;
@@ -20,11 +20,8 @@ public class UniqueEmailUserValidation implements CreateUserValidation<CreateUse
     public void validation(CreateUserRequest request) {
          var userOptional = this.userRepository.findByEmail(request.email());
 
-
         if(userOptional.isPresent()) {
-            throw new EmailAlreadyExistsException("Email ja cadastrado", "/users");
+            throw new EmailAlreadyExistsException("Email ja cadastrado", "/users/");
         }
-
-
      }
 }
