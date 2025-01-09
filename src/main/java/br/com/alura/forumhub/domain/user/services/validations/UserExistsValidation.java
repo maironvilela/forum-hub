@@ -1,6 +1,7 @@
 package br.com.alura.forumhub.domain.user.services.validations;
 
 import br.com.alura.forumhub.controller.users.dtos.UpdateUserRequest;
+import br.com.alura.forumhub.domain.user.services.validations.protocols.DeleteUserValidation;
 import br.com.alura.forumhub.domain.user.services.validations.protocols.UpdateUserValidation;
 import br.com.alura.forumhub.exceptions.shared.ResourceNotFoundException;
 import br.com.alura.forumhub.infra.repositories.UserRepository;
@@ -8,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-public class UserExistsValidation implements UpdateUserValidation<UpdateUserRequest> {
+public class UserExistsValidation implements UpdateUserValidation<UpdateUserRequest>, DeleteUserValidation {
 
     private final UserRepository userRepository;
 
@@ -18,10 +19,19 @@ public class UserExistsValidation implements UpdateUserValidation<UpdateUserRequ
 
     @Override
     public void validation(UpdateUserRequest request) {
-        System.out.println("#### UserExistsValidation ####");
-        var isUserExists = this.userRepository.existsById(request.id());
+        this.findUserById(request.id());
+    }
+
+    @Override
+    public void validation(Long id) {
+        this.findUserById(id);
+    }
+
+    private void findUserById(Long id){
+        var isUserExists = this.userRepository.existsById(id);
         if(!isUserExists){
-            throw new ResourceNotFoundException(request.name() + " nao encontrado", "/users/"+request.id());
+            throw new ResourceNotFoundException("Recurso nao encontrado", "/users/"+id);
         }
+
     }
 }
