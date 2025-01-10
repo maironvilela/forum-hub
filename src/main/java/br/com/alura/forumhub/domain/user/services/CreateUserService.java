@@ -3,6 +3,7 @@ package br.com.alura.forumhub.domain.user.services;
 import br.com.alura.forumhub.controller.profiles.dtos.Name;
 import br.com.alura.forumhub.controller.users.dtos.CreateUserRequest;
 import br.com.alura.forumhub.domain.user.model.User;
+import br.com.alura.forumhub.domain.user.protocols.cryptography.Hasher;
 import br.com.alura.forumhub.domain.user.services.validations.protocols.CreateUserValidation;
 import br.com.alura.forumhub.infra.repositories.ProfileRepository;
 import br.com.alura.forumhub.infra.repositories.UserRepository;
@@ -17,14 +18,16 @@ public class CreateUserService {
     private final UserRepository userRepository;
     private final ProfileRepository profileRepository;
     private final List<CreateUserValidation<CreateUserRequest>> validations;
-    private final PasswordEncoder passwordEncoder;
+    //private final PasswordEncoder passwordEncoder;
+    private final Hasher hasher;
 
 
-    public CreateUserService(UserRepository userRepository, ProfileRepository profileRepository, List<CreateUserValidation<CreateUserRequest>> validations, PasswordEncoder passwordEncoder){
+    public CreateUserService(UserRepository userRepository, ProfileRepository profileRepository, List<CreateUserValidation<CreateUserRequest>> validations, Hasher hasher){
         this.userRepository = userRepository;
         this.profileRepository = profileRepository;
         this.validations = validations;
-        this.passwordEncoder = passwordEncoder;
+       // this.passwordEncoder = passwordEncoder;
+        this.hasher = hasher;
     }
 
      public User execute(CreateUserRequest request){
@@ -41,7 +44,9 @@ public class CreateUserService {
     }
 
     private String hashedPassword(String textPassword){
-        return passwordEncoder.encode(textPassword);
+
+        //return passwordEncoder.encode(textPassword);
+        return hasher.hash(textPassword);
     }
 
     private void setProfiles(User user, CreateUserRequest request){
