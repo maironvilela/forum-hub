@@ -22,6 +22,7 @@ public class SearchProfilesController implements SearchResourceController<Search
     @GetMapping
     @Override
     public ResponseEntity<Page<SearchProfilesResponse>> handle(@PageableDefault(sort = {"name"}) Pageable pageable) {
+        System.out.println("SearchProfilesController");
         var profile = this.repository.findAll(pageable);
         var response = profile.map(SearchProfilesResponse:: new);
         return ResponseEntity.ok(response);

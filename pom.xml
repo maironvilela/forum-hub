@@ -104,8 +104,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version> <!-- Ou a versão mais recente -->
 				<configuration>
-					<source>17</source> <!-- Substitua pela sua versão do Java -->
-					<target>17</target>
+					<source>23</source> <!-- Substitua pela sua versão do Java -->
+					<target>23</target>
 					<annotationProcessorPaths>
 						<path>
 							<groupId>org.projectlombok</groupId>

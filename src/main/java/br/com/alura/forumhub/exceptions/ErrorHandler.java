@@ -6,6 +6,7 @@ import br.com.alura.forumhub.exceptions.shared.ResourceNotFoundException;
 import br.com.alura.forumhub.exceptions.types.DataErrorValidation;
 import br.com.alura.forumhub.exceptions.types.DetailsMessageError;
 import br.com.alura.forumhub.exceptions.types.MensagemErro;
+import br.com.alura.forumhub.exceptions.users.AuthenticationFailureException;
 import br.com.alura.forumhub.exceptions.users.EmailAlreadyExistsException;
 import br.com.alura.forumhub.exceptions.users.ProfileValidationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -67,6 +68,12 @@ public class ErrorHandler {
 
     @ExceptionHandler(EmailAlreadyExistsException.class)
     public ResponseEntity<DetailsMessageError> emailAlreadyExistsException(EmailAlreadyExistsException exception) {
+        return ResponseEntity.badRequest().body(new DetailsMessageError(exception));
+    }
+
+
+    @ExceptionHandler(AuthenticationFailureException.class)
+    public ResponseEntity<DetailsMessageError> authenticationFailureException(AuthenticationFailureException exception) {
         return ResponseEntity.badRequest().body(new DetailsMessageError(exception));
     }
 

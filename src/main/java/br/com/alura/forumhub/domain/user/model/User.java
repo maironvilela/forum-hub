@@ -3,6 +3,7 @@ package br.com.alura.forumhub.domain.user.model;
 import br.com.alura.forumhub.controller.users.dtos.UpdateUserRequest;
 import br.com.alura.forumhub.domain.profile.models.Profile;
 import br.com.alura.forumhub.controller.users.dtos.CreateUserRequest;
+import br.com.alura.forumhub.domain.topic.models.Topic;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -24,18 +25,21 @@ import java.util.List;
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String name;
-    String email;
-    String password;
+    private Long id;
+    private String name;
+    private String email;
+    private String password;
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
             name = "users_profiles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "profile_id")
     )
-    List<Profile> profiles = new ArrayList<>();
+    private List<Profile> profiles = new ArrayList<>();
+
+
+
 
     public User( String name, String email, String password, List<Profile> profiles) {
         this.name = name;
