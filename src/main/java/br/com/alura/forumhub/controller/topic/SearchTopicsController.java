@@ -1,6 +1,5 @@
 package br.com.alura.forumhub.controller.topic;
 
-import br.com.alura.forumhub.controller.course.dtos.SearchCourserResponse;
 import br.com.alura.forumhub.controller.protocols.SearchResourceController;
 import br.com.alura.forumhub.domain.topic.dtos.TopicResponse;
 import br.com.alura.forumhub.infra.repositories.TopicRepository;
@@ -15,11 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/topics")
-public class SearchTopics implements SearchResourceController<TopicResponse> {
+public class SearchTopicsController implements SearchResourceController<TopicResponse> {
 
     private final TopicRepository topicRepository;
 
-    public SearchTopics(TopicRepository topicRepository) {
+    public SearchTopicsController(TopicRepository topicRepository) {
         this.topicRepository = topicRepository;
     }
 
