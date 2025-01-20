@@ -1,15 +1,12 @@
 package br.com.alura.forumhub.domain.course.models;
 
-import br.com.alura.forumhub.controller.course.dtos.Category;
-import br.com.alura.forumhub.controller.course.dtos.CreateCourseRequest;
-import br.com.alura.forumhub.controller.course.dtos.UpdateCourseRequest;
-import br.com.alura.forumhub.domain.topic.models.Topic;
+import br.com.alura.forumhub.domain.course.dtos.Category;
+import br.com.alura.forumhub.domain.course.dtos.CreateCourseRequest;
+import br.com.alura.forumhub.domain.course.dtos.UpdateCourseRequest;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 
 @Entity(name = "Course")

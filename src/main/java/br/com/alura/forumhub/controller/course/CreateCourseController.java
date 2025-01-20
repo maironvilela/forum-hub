@@ -2,8 +2,8 @@ package br.com.alura.forumhub.controller.course;
 
 import br.com.alura.forumhub.controller.protocols.CreateResourceController;
 import br.com.alura.forumhub.domain.course.models.Course;
-import br.com.alura.forumhub.controller.course.dtos.CreateCourseRequest;
-import br.com.alura.forumhub.controller.course.dtos.CreateCourseResponse;
+import br.com.alura.forumhub.domain.course.dtos.CreateCourseRequest;
+import br.com.alura.forumhub.domain.course.dtos.CreateCourseResponse;
 import br.com.alura.forumhub.domain.course.validations.protocols.CourseValidatorProtocol;
 import br.com.alura.forumhub.infra.repositories.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;

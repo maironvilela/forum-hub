@@ -1,11 +1,9 @@
 package br.com.alura.forumhub.controller.users;
 
-import br.com.alura.forumhub.controller.course.dtos.UpdateCourseResponse;
 import br.com.alura.forumhub.controller.protocols.UpdateResourceController;
-import br.com.alura.forumhub.controller.users.dtos.UpdateUserRequest;
-import br.com.alura.forumhub.controller.users.dtos.UpdateUserResponse;
+import br.com.alura.forumhub.domain.user.dtos.UpdateUserRequest;
+import br.com.alura.forumhub.domain.user.dtos.UpdateUserResponse;
 import br.com.alura.forumhub.domain.user.services.UpdateUserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

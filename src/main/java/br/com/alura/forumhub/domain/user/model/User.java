@@ -1,9 +1,8 @@
 package br.com.alura.forumhub.domain.user.model;
 
-import br.com.alura.forumhub.controller.users.dtos.UpdateUserRequest;
+import br.com.alura.forumhub.domain.user.dtos.UpdateUserRequest;
 import br.com.alura.forumhub.domain.profile.models.Profile;
-import br.com.alura.forumhub.controller.users.dtos.CreateUserRequest;
-import br.com.alura.forumhub.domain.topic.models.Topic;
+import br.com.alura.forumhub.domain.user.dtos.CreateUserRequest;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

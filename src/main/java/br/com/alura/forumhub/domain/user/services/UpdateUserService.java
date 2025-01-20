@@ -1,16 +1,14 @@
 package br.com.alura.forumhub.domain.user.services;
 
 
-import br.com.alura.forumhub.controller.profiles.dtos.Name;
-import br.com.alura.forumhub.controller.users.dtos.CreateUserRequest;
-import br.com.alura.forumhub.controller.users.dtos.UpdateUserRequest;
+import br.com.alura.forumhub.domain.profile.dtos.Name;
+import br.com.alura.forumhub.domain.user.dtos.UpdateUserRequest;
 import br.com.alura.forumhub.domain.profile.models.Profile;
 import br.com.alura.forumhub.domain.user.model.User;
 import br.com.alura.forumhub.domain.user.services.validations.protocols.UpdateUserValidation;
 import br.com.alura.forumhub.infra.repositories.ProfileRepository;
 import br.com.alura.forumhub.infra.repositories.UserRepository;
 import jakarta.transaction.Transactional;
-import org.springframework.core.env.Profiles;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

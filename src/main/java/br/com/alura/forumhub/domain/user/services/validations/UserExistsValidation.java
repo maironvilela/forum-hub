@@ -1,6 +1,6 @@
 package br.com.alura.forumhub.domain.user.services.validations;
 
-import br.com.alura.forumhub.controller.users.dtos.UpdateUserRequest;
+import br.com.alura.forumhub.domain.user.dtos.UpdateUserRequest;
 import br.com.alura.forumhub.domain.user.services.validations.protocols.DeleteUserValidation;
 import br.com.alura.forumhub.domain.user.services.validations.protocols.UpdateUserValidation;
 import br.com.alura.forumhub.exceptions.shared.ResourceNotFoundException;

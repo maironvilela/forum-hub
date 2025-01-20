@@ -1,4 +1,4 @@
-package br.com.alura.forumhub.controller.course.dtos;
+package br.com.alura.forumhub.domain.course.dtos;
 
 import br.com.alura.forumhub.domain.course.models.Course;
 

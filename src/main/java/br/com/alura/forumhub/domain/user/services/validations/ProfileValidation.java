@@ -1,7 +1,7 @@
 package br.com.alura.forumhub.domain.user.services.validations;
 
-import br.com.alura.forumhub.controller.profiles.dtos.Name;
-import br.com.alura.forumhub.controller.users.dtos.CreateUserRequest;
+import br.com.alura.forumhub.domain.profile.dtos.Name;
+import br.com.alura.forumhub.domain.user.dtos.CreateUserRequest;
 import br.com.alura.forumhub.domain.user.services.validations.protocols.CreateUserValidation;
 import br.com.alura.forumhub.exceptions.users.ProfileValidationException;
 import org.springframework.stereotype.Component;

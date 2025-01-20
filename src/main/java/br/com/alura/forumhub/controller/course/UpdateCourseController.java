@@ -2,8 +2,8 @@ package br.com.alura.forumhub.controller.course;
 
 import br.com.alura.forumhub.controller.protocols.UpdateResourceController;
 import br.com.alura.forumhub.domain.course.services.UpdateCourseService;
-import br.com.alura.forumhub.controller.course.dtos.UpdateCourseRequest;
-import br.com.alura.forumhub.controller.course.dtos.UpdateCourseResponse;
+import br.com.alura.forumhub.domain.course.dtos.UpdateCourseRequest;
+import br.com.alura.forumhub.domain.course.dtos.UpdateCourseResponse;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

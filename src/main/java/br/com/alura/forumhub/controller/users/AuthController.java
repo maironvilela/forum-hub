@@ -1,8 +1,8 @@
 package br.com.alura.forumhub.controller.users;
 
 import br.com.alura.forumhub.controller.protocols.AuthControllerProtocol;
-import br.com.alura.forumhub.controller.users.dtos.AuthRequest;
-import br.com.alura.forumhub.controller.users.dtos.AuthResponse;
+import br.com.alura.forumhub.domain.user.dtos.AuthRequest;
+import br.com.alura.forumhub.domain.user.dtos.AuthResponse;
 import br.com.alura.forumhub.domain.user.model.User;
 import br.com.alura.forumhub.domain.user.services.TokenService;
 import org.springframework.beans.factory.annotation.Autowired;

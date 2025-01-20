@@ -1,4 +1,4 @@
-package br.com.alura.forumhub.controller.users.dtos;
+package br.com.alura.forumhub.domain.user.dtos;
 
 import jakarta.validation.constraints.NotBlank;
 

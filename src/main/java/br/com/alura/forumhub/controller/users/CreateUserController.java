@@ -1,8 +1,8 @@
 package br.com.alura.forumhub.controller.users;
 
 import br.com.alura.forumhub.controller.protocols.CreateResourceController;
-import br.com.alura.forumhub.controller.users.dtos.CreateUserRequest;
-import br.com.alura.forumhub.controller.users.dtos.CreateUserResponse;
+import br.com.alura.forumhub.domain.user.dtos.CreateUserRequest;
+import br.com.alura.forumhub.domain.user.dtos.CreateUserResponse;
 import br.com.alura.forumhub.domain.user.services.CreateUserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

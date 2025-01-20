@@ -1,6 +1,6 @@
 package br.com.alura.forumhub.domain.user.services.validations;
 
-import br.com.alura.forumhub.controller.users.dtos.UpdateUserRequest;
+import br.com.alura.forumhub.domain.user.dtos.UpdateUserRequest;
 import br.com.alura.forumhub.domain.user.services.validations.protocols.UpdateUserValidation;
 import br.com.alura.forumhub.exceptions.users.EmailAlreadyExistsException;
 import br.com.alura.forumhub.infra.repositories.UserRepository;
