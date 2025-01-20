@@ -24,15 +24,15 @@ Este é o nosso desafio, chamado de FórumHub: nele, vamos replicar este process
 
 Nossa API se concentrará especificamente nos tópicos, e deve permitir aos usuários:
 
-- Criar um novo tópico;
+✅ Criar um novo tópico;
 
-- Mostrar todos os tópicos criados;
+✅ Mostrar todos os tópicos criados;
 
-- Mostrar um tópico específico;
+✅ Mostrar um tópico específico;
 
-- Atualizar um tópico;
+✅ Atualizar um tópico;
 
-- Eliminar um tópico.
+✅ Eliminar um tópico.
 
 
 
@@ -52,6 +52,18 @@ Implementar uma API REST com as seguintes funcionalidades:
 # ⚒️Principais Recursos
 
 [![](https://img.shields.io/badge/Configuração_do_ambiente_Java-052051)]()
+[![](https://img.shields.io/badge/Configuração_Spring_Boot-052051)]()
+[![](https://img.shields.io/badge/Autenticação_com_JWT-052051)]()
+[![](https://img.shields.io/badge/Aplicação_de_filtro_nas_requisições-052051)]()
+[![](https://img.shields.io/badge/Criação_de_topicos-052051)]()
+[![](https://img.shields.io/badge/Edição_de_topicos-052051)]()
+[![](https://img.shields.io/badge/Exclusao_de_topicos-052051)]()
+[![](https://img.shields.io/badge/Pesquisa_de_topicos-052051)]()
+[![](https://img.shields.io/badge/Padrao_de_Projeto_MVC-052051)]()
+[![](https://img.shields.io/badge/Padrao_de_Projeto_MVC-052051)]()
+[![](https://img.shields.io/badge/Consultas_Derevadas-052051)]()
+[![](https://img.shields.io/badge/Docker-052051)]()
+[![](https://img.shields.io/badge/Migrations-052051)]()
 
 
 
@@ -59,10 +71,10 @@ Implementar uma API REST com as seguintes funcionalidades:
 # 💻Principais Tecnologias
 
 [![https://www.java.com/en/download/](https://img.shields.io/badge/@code-Java_V.23-052051)]()
-
 [![https://gutendex.com/](https://img.shields.io/badge/@DB-mysql-083658)]()
-
-
+[![https://gutendex.com/](https://img.shields.io/badge/@ORM-JPA-083658)]()
+[![https://gutendex.com/](https://img.shields.io/badge/@INFRA-FlyWay-083658)]()
+[![https://gutendex.com/](https://img.shields.io/badge/@Autenticação-Spring_Security-083658)]()
 
 
 
@@ -71,13 +83,47 @@ Implementar uma API REST com as seguintes funcionalidades:
 ```
   |-src
      |-br.com.alura.forumhub
+        |-controller
+        |- domain
+        |- exceptions
+        |- infra
+            |- adapters
+            |- filters
+            |- repositories
+        |- lib
+            |- bcrypt
+            |- springsecurity
+        |- utils
+        |- validators
+            
+            
 
 ```
 
 # ✅ Requisitos para rodar o projeto
+
+✔️ Docker
+
+✔️ Java V.23
+
  
 
 # 🚀Executando o projeto
 
+👣 Rode o comando para a criação do container docker e criação da base de dados
+```java
+docker compose up -d
+```
+👣 Rode o projeto Spring Boot
+
+> 💡 Para facilitar o recurso de autenticação, foi criado dois usuarios com as seguintes informações:
+>   
+> > **Email**: admin@email.com
+> >
+> >**Senha**: 123456
+> 
+>  > **Email**: usuario@email.com
+> >
+>  > **Senha**: 123456
  
 
